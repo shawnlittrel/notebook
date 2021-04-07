@@ -1,5 +1,5 @@
 {
-  "body": [
+  "notes": [
     {
       "title": "Test Title",
       "text": "Test text"
@@ -8,6 +8,16 @@
       "title": "Test1",
       "text": "Here's some text",
       "id": "1"
+    },
+    {
+      "title": "test",
+      "text": "testests",
+      "id": "2"
+    },
+    {
+      "title": "testeardsaf",
+      "text": "ddsafdsafdsa",
+      "id": "3"
     }
   ]
 }

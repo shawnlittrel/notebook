@@ -15,7 +15,7 @@ function saveNotes(body, db){
      db.push(noteBody);
      fs.writeFileSync(
           path.join(__dirname, '../db/db.json'),
-          JSON.stringify({ body: db }, null ,2)
+          JSON.stringify({ notes: db }, null ,2)
      );
      return noteBody;
 };
