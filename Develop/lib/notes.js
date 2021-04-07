@@ -19,7 +19,20 @@ function saveNotes(body, db){
      );
      return noteBody;
 };
+
+function validateNote(note) {
+     if(!note.title) {
+          return false;
+     }
+     if(!note.text) {
+          return false;
+     }
+     return true;
+};
 //When I click write icon, I am presented with emply fields to enter new note title and text
 function promptNewNote(){};
 
-module.exports = saveNotes
+module.exports = {
+                    saveNotes,
+                    validateNote
+                    }
