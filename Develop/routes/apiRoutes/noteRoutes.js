@@ -21,18 +21,20 @@ router.post('/notes', (req, res) => {
      }
 });
 
-// router.delete('/notes/:id', (req, res) => {
-//      const result = findById(req.params.id, notes).then
-     
+router.post('/notes/:id', (req, res) => {
+     const result = findById(req.params.id, notes);
 
-//      //on click, find id of clicked note
-//      //find index of element with matching id
-//      //delete index from array
-//      if (result) {
-//           res.json(result);
-//      } else {
-//           res.send(404);
-//      }
-// });
+     if (result) {
+          res.json(result);
+     } else {
+          res.sendStatus('Error: ' + statusText)
+     }
+})
+
+router.delete('/notes/:id', (req, res) => {
+     const result = deleteNote(req.params.id, notes);
+          res.json(result);
+     }
+);
 
 module.exports = router;

@@ -26,13 +26,22 @@ function validateNote(note) {
 
 //find object based on ID for deletion
 function findById(id, notesArray) {
-     const result = notesArray.filter(notes => notes.id === id)[0];
-     return result;
+    notesArray.filter(notes => notes.id === id)[0];
 }
 
-function deleteNote(id) {
-     let deletedNote = notesArray.findIndex(id)
-     console.log(deletedNote);
+function deleteNote(id, notesArray) {
+          //on click, find id of clicked note
+          let selectedObj = findById(id, notesArray);
+          //find index of element with matching id
+          let indexOfObj = notesArray.indexOf(selectedObj);
+          //delete index from array
+          newNotesArray = notesArray.splice(indexOfObj, 1);
+
+          fs.writeFileSync(
+               path.join(__dirname, '../db/db.json'),
+               JSON.stringify({ notes: newNotesArray }, null, 2)
+               )
+          
 }
 
 module.exports = {
